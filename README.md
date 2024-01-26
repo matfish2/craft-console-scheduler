@@ -94,7 +94,7 @@ Methods without a specified time can be followed by an `at` method using fluent 
 
 If you need more control you can also use the raw `cron` method to define your own frequency, e.g:
 ```php
-$schedule->command('my/cool/command')->cron('*/5 * 3 * 4'); // Every 5 minutes, on day 3 of the month, and on Thursday
+$schedule->command('my/cool/command')->cron('*/5 * 3 7 4'); // Every 5 minutes, on day 3 of the month, and on Thursday, only in July
 ```
 
 ## License
