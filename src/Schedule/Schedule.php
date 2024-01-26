@@ -45,8 +45,8 @@ class Schedule
         return $this->command;
     }
 
-    public function isDue(): bool
+    public function isDue(\DateTime $now): bool
     {
-        return $this->expression->isDue();
+        return $this->expression->isDue($now);
     }
 }

@@ -17,11 +17,12 @@ class ScheduleController extends Controller
 
     public function actionRun(): int
     {
-        $time = DateTimeHelper::now()->format('d-m-Y H:i');
-        $this->log("Checking for commands to run at {$time}");
+        $time = DateTimeHelper::now();
 
-        SchedulesFactory::make()->filter(function (Schedule $schedule) {
-            return $schedule->isDue();
+        $this->log("Checking for commands to run at {$time->format('d-m-Y H:i')}");
+
+        SchedulesFactory::make()->filter(function (Schedule $schedule) use ($time) {
+            return $schedule->isDue($time);
         })->each(function (Schedule $schedule) {
             $this->log("Running command " . $schedule->getCommand(), true);
             $res = $schedule->run();
