@@ -70,6 +70,8 @@ Supported frequencies:
 * `everySixHours()`
 * `daily()`
 * `dailyAt($time)`
+* `weekdays()`
+* `days($day1,$day2, $day3, etc)` - specific days of week
 * `sundays()`
 * `mondays()`
 * `tuesdays()`
