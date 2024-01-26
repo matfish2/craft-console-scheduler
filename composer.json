@@ -1,0 +1,44 @@
+{
+  "name": "matfish/craft-console-scheduler",
+  "description": "Schedule Console Commands in Code",
+  "type": "craft-plugin",
+  "keywords": [
+    "console",
+    "command",
+    "schedule"
+  ],
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Mat Fish",
+      "homepage": "https://github.com/matfish2/craft-console-scheduler"
+    }
+  ],
+  "support": {
+    "email": "matfish2@gmail.com",
+    "issues": "https://github.com/matfish2/craft-console-scheduler/issues?state=open",
+    "source": "https://github.com/matfish2/craft-console-scheduler",
+    "docs": "https://github.com/matfish2/craft-console-scheduler/blob/master/README.md"
+  },
+  "require": {
+    "craftcms/cms": "^4.0",
+    "dragonmantank/cron-expression": "^3.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "matfish\\ConsoleScheduler\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Console Scheduler",
+    "handle": "console-scheduler",
+    "changelogUrl": "https://raw.githubusercontent.com/matfish2/craft-console-scheduler/master/CHANGELOG.md",
+    "class": "matfish\\ConsoleScheduler\\Plugin"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
+  }
+}
