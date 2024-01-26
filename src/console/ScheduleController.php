@@ -43,6 +43,7 @@ class ScheduleController extends Controller
     private function log($message, $toFile = false): void
     {
         $this->stdout($message . PHP_EOL, BaseConsole::FG_GREEN);
+
         if ($toFile) {
             Craft::getLogger()->log($message, Logger::LEVEL_INFO, 'console-scheduler');
         }

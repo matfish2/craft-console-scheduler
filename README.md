@@ -32,7 +32,7 @@ php craft plugin/install console-scheduler
 Add the following line to your `crontab`
 
 ```
-* * * * * /var/www/my-site/craft scheduler/run
+* * * * * /var/www/my-site/php craft console-scheduler/schedule >> /dev/null 2>&1
 ```
 
 This will ensure the scheduler runs every minute, and checks for due commands to run.
