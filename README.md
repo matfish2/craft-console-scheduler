@@ -97,6 +97,15 @@ If you need more control you can also use the raw `cron` method to define your o
 $schedule->command('my/cool/command')->cron('*/5 * 3 7 4'); // Every 5 minutes, on day 3 of the month, and on Thursday, only in July
 ```
 
+## Testing
+When `CRAFT_ENVIRONMENT=dev` you can pass a `--test` option to the scheduler (in Y-m-d H:i format), to mimic a time which is not the present, and make sure the commands run as expected.
+E.g:
+```
+php craft console-scheduler/schedule --test="2024-01-26 19:05" 
+```
+
+The `--test` option will be ignored in any other environment.
+
 ## License
 
 You can try Console Scheduler in a development environment for as long as you like. Once your site goes live, you are

@@ -14,10 +14,22 @@ use yii\log\Logger;
 class ScheduleController extends Controller
 {
     public $defaultAction = 'run';
+    public ?string $test = null;
+
+    public function options($actionID): array
+    {
+
+        $options = parent::options($actionID);
+
+        $options[] = 'test';
+
+        return $options;
+    }
+
 
     public function actionRun(): int
     {
-        $time = DateTimeHelper::now();
+        $time = $this->getDateTime();
 
         $this->log("Checking for commands to run at {$time->format('d-m-Y H:i')}");
 
@@ -48,5 +60,14 @@ class ScheduleController extends Controller
         if ($toFile) {
             Craft::getLogger()->log($message, Logger::LEVEL_INFO, 'console-scheduler');
         }
+    }
+
+    protected function getDateTime(): \DateTime
+    {
+        if ($this->test && getenv('CRAFT_ENVIRONMENT') === 'dev') {
+            return DateTimeHelper::toDateTime($this->test, true);
+        }
+
+        return DateTimeHelper::now();
     }
 }
