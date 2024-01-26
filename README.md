@@ -91,6 +91,12 @@ Supported frequencies:
 * `yearlyOn($month, $dayOfMonth, $time)`
 
 Methods without a specified time can be followed by an `at` method using fluent syntax. 
+
+If you need more control you can also use the raw `cron` method to define your own frequency, e.g:
+```php
+$schedule->command('my/cool/command')->cron('*/5 * * * 4'); // Every 5 minutes, only on Thursday
+```
+
 ## License
 
 You can try Console Scheduler in a development environment for as long as you like. Once your site goes live, you are
