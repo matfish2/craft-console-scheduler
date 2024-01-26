@@ -18,7 +18,7 @@
     "email": "matfish2@gmail.com",
     "issues": "https://github.com/matfish2/craft-console-scheduler/issues?state=open",
     "source": "https://github.com/matfish2/craft-console-scheduler",
-    "docs": "https://github.com/matfish2/craft-console-scheduler/blob/master/README.md"
+    "docs": "https://github.com/matfish2/craft-console-scheduler/blob/main/README.md"
   },
   "require": {
     "craftcms/cms": "^4.0",
@@ -32,7 +32,7 @@
   "extra": {
     "name": "Console Scheduler",
     "handle": "console-scheduler",
-    "changelogUrl": "https://raw.githubusercontent.com/matfish2/craft-console-scheduler/master/CHANGELOG.md",
+    "changelogUrl": "https://raw.githubusercontent.com/matfish2/craft-console-scheduler/main/CHANGELOG.md",
     "class": "matfish\\ConsoleScheduler\\Plugin"
   },
   "config": {
