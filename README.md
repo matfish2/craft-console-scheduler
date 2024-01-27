@@ -72,7 +72,10 @@ Supported frequencies:
 * `everySixHours()`
 * `daily()`
 * `dailyAt($time)`
+* `twiceDaily($hour1 = 1,$hour2 = 13)`
+* `twiceDailyAt($hour1 = 1,$hour2 = 13, $offset = 0)`
 * `weekdays()`
+* `weedends()`
 * `days($day1,$day2, $day3, etc)` - specific days of week
 * `sundays()`
 * `mondays()`
@@ -82,15 +85,15 @@ Supported frequencies:
 * `fridays()`
 * `satrudays()`
 * `weekly()`
-* `weeklyOn($dayOfWeek, $time)`
+* `weeklyOn($dayOfWeek, $time = '0:0')`
 * `monthly()`
 * `monthlyOn($dayOfMonth, $time)`
-* `twiceMonthly($firstDay, $secondDay, $time)`
-* `lastDayOfMonth($time)`
+* `twiceMonthly($firstDay = 1, $secondDay = 16, $time = '0:0')`
+* `lastDayOfMonth($time = '0:0')`
 * `quarterly()`
-* `quarterlyOn($dayOfQuarter, $time)`
+* `quarterlyOn($dayOfQuarter = 1, $time = '0:0')`
 * `yearly()`
-* `yearlyOn($month, $dayOfMonth, $time)`
+* `yearlyOn($month = 1, $dayOfMonth = 1, $time = '0:0')`
 
 Methods without a specified time can be followed by an `at` method using fluent syntax. 
 
