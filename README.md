@@ -63,6 +63,8 @@ Supported frequencies:
 * `everyTenMinutes()`
 * `everyFifteenMinutes()`
 * `everyThirtyMinutes()`
+* `hourly()`
+* `hourlyAt($time)`
 * `everyOddHour()`
 * `everyTwoHours()`
 * `everyThreeHours()`
