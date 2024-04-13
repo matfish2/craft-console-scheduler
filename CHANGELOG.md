@@ -1,5 +1,8 @@
 # Release Notes for Console Scheduler
 
+## 2.0.0 - 2024-04-13
+- Craft 5: Initial Release
+
 ## 1.0.2 - 2024-01-27
 - Refactor
 
