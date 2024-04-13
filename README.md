@@ -125,6 +125,9 @@ Craft's [Commercial Plugin Licensing](https://craftcms.com/docs/4.x/plugins.html
 
 This plugin requires Craft CMS 4.0.0 or later.
 
+## Acknowledgements
+This package is heavily inspired by Laravel's [Task Scheduling](https://laravel.com/docs/11.x/scheduling) feature.
+
 ## Contribution Guidelines
 
 Community is at the heart of open-source projects. We are always happy to receive constructive feedback from users to
