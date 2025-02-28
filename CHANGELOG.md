@@ -1,5 +1,8 @@
 # Release Notes for Console Scheduler
 
+## 2.1.0 - 2025-02-28
+- Improved: use proc_open instead of exec (#2)[https://github.com/matfish2/craft-console-scheduler/discussions/2]
+
 ## 2.0.0 - 2024-04-13
 - Craft 5: Initial Release
 
