@@ -37,15 +37,23 @@ class ScheduleController extends Controller
             return $schedule->isDue($time);
         })->each(function (Schedule $schedule) {
             $this->log("Running command " . $schedule->getCommand(), true);
-            $res = $schedule->run();
-            if (is_array($res[0])) {
+            $result = $schedule->run();
+            
+            if (!empty($result['stdout'])) {
                 $this->log('Output:', true);
-                foreach ($res[0] as $row) {
+                foreach ($result['stdout'] as $row) {
                     $this->log($row, true);
                 }
             }
 
-            $this->log("Exit code " . $res[1], true);
+            if (!empty($result['stderr'])) {
+                $this->log('Errors:', true);
+                foreach ($result['stderr'] as $row) {
+                    $this->log($row, true, true);
+                }
+            }
+
+            $this->log("Exit code " . $result['exitCode'], true);
         });
 
         $this->log("Done");
@@ -53,12 +61,14 @@ class ScheduleController extends Controller
         return ExitCode::OK;
     }
 
-    private function log($message, $toFile = false): void
+    private function log($message, $toFile = false, $isError = false): void
     {
-        $this->stdout($message . PHP_EOL, BaseConsole::FG_GREEN);
+        $color = $isError ? BaseConsole::FG_RED : BaseConsole::FG_GREEN;
+        $this->stdout($message . PHP_EOL, $color);
 
         if ($toFile) {
-            Craft::getLogger()->log($message, Logger::LEVEL_INFO, 'console-scheduler');
+            $level = $isError ? Logger::LEVEL_ERROR : Logger::LEVEL_INFO;
+            Craft::getLogger()->log($message, $level, 'console-scheduler');
         }
     }
 
